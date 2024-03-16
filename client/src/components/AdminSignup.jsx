@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 export default function AdminSignup  ()  {
+  const [Issuccess, setIssuccess] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Added state for passwords matching
   const [loading,setLoading]=useState(false);
 
+  const handlesucces = () =>
+  {
+    setIssuccess(true)
+  }
+  if(Issuccess){
+    return <Navigate to="Job-listing" />
+  }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -101,7 +110,7 @@ export default function AdminSignup  ()  {
             />
           </div>
           {!passwordsMatch && <p className="text-red-500">Passwords do not match!</p>} {/* Added error message */}
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"onClick={handlesucces}>
             {loading?"Loading..":"Sign Up"}
           </button>
         </form>
