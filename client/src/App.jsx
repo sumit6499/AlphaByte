@@ -1,12 +1,15 @@
-import React from 'react'
-import NavBar from './components/Navbar'
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Services from "./components/Services";
 
-const App = () => {
+function App() {
   return (
-    <Navbar/>
-    
-  )
+    <>
+      <Navbar />
+      <Home />
+      <Services />
+    </>
+  );
 }
 
-export default App
- 
+export default App;

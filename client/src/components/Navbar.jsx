@@ -1,7 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import Logo from "../assets/logo2.jpg";
+import Logo from "../assets/logo.png";
 import { FaXmark, FaBars } from "react-icons/fa6";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -49,7 +48,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full bg-white md:bg-transparent fixed top-0 left-0 right-0">
+    <header className="w-full bg-white fixed top-0 left-0 right-0">
       <nav
         className={`py-4 lg:px-14 ${
           isSticky
@@ -58,8 +57,15 @@ const NavBar = () => {
         } `}
       >
         <div className="flex justify-between items-center text-base gap-8">
-          <a href="/" className="text-2xl font-semibold flex items-center space-x-3">
-            <img src={Logo} alt="logo" className="w-10 inline-block items-center" />
+          <a
+            href="/"
+            className="text-2xl font-semibold flex items-center space-x-3"
+          >
+            <img
+              src={Logo}
+              alt="logo"
+              className="w-10 inline-block items-center"
+            />
             <span className="text-[#263228]">PlaceMint</span>
           </a>
 
@@ -98,10 +104,14 @@ const NavBar = () => {
               className="text-neutralDGrey focus:out-of-range: focus:text-gray-500"
               onClick={toggleMenu}
             >
-              {isMenuopen ? <FaXmark className="h-6 w-6" /> : <FaBars className="h-6 w-6 " />}
+              {isMenuopen ? (
+                <FaXmark className="h-6 w-6" />
+              ) : (
+                <FaBars className="h-6 w-6 " />
+              )}
             </button>
           </div>
-        </div> 
+        </div>
 
         <div
           className={`space-y-4 px-4 mt-16 py-7 bg-brandPrimary ${
@@ -120,9 +130,9 @@ const NavBar = () => {
               {link}
             </Link>
           ))}
-        </div> 
+        </div>
       </nav>
-      
+
       {/* Conditional rendering for login and signup components */}
       {showLogin && <Login />}
       {showSignup && <Signup />}
