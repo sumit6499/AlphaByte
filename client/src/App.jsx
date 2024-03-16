@@ -19,6 +19,8 @@ const App = () => {
           <Route path="/candidate-login" element={<CandidateLogin />} />
           <Route path="/admin-Signup" element={<AdminSignup />} /> {/* Route to the AdminSignup component */}
           <Route path="/candidate-Signup" element={<CandidateSignup />} /> {/* Route to the CandidateSignup component */}
+          <Route path="/services" element={<Services />} /> {/* New Route for Services component */}
+
         </Routes>
       </div>
     </BrowserRouter>
