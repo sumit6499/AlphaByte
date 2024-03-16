@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 // logo
-import Logo from "../assets/logo1.png";
+import Logo from "../assets/logo2.jpg";
 // icons
 import { FaXmark, FaBars } from "react-icons/fa6";
 
