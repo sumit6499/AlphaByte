@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar';
 import Login from './components/Login';
 import AdminLogin from './components/AdminLogin';
 import CandidateLogin from './components/CandidateLogin';
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-        <NavBar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/admin-login" element={<AdminLogin />} />
