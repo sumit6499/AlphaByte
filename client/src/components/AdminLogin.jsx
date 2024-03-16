@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {Navigate} from 'react-router-dom'
 
 const AdminLogin = () => {
+  const [Issuccess, setIssuccess] = useState(false);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
 
+  const handleSucces = () =>{
+    setIssuccess(true);
+  }
+  if(Issuccess)
+  {
+    return  <Navigate to="Job-listing"/>
+  }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -60,7 +70,7 @@ const AdminLogin = () => {
               className="w-full border-gray-300 rounded-md px-3 py-2"
             />
           </div>
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"onClick={handleSucces}>
             Admin Login
           </button>
         </form>
