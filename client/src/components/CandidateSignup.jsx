@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { Navigate } from 'react-router-dom';
 
 
 const CandidateSignup = () => {
+  const [Issuccess, setIssuccess] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -12,7 +13,14 @@ const CandidateSignup = () => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+  const handleIssuccessClick = () =>{
+    setIssuccess(true);
+  }
 
+  if (Issuccess) {
+    return <Navigate to="/resume-uploader" />;
+  }
+  
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -84,7 +92,7 @@ const CandidateSignup = () => {
             />
           </div>
           {!passwordsMatch && <p className="text-red-500">Passwords do not match!</p>} {/* Added error message */}
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors" onClick={handleIssuccessClick}>
             Sign Up
           </button>
         </form>
