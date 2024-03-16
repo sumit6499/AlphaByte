@@ -6,6 +6,8 @@ import AdminLogin from './components/AdminLogin';
 import CandidateLogin from './components/CandidateLogin';
 import AdminSignup from './components/AdminSignup'; // Import the AdminSignup component
 import CandidateSignup from './components/CandidateSignup'; // Import the CandidateSignup component
+import Services from './components/Services'; // Import the Services component
+
 import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
