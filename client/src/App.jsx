@@ -7,7 +7,7 @@ import CandidateLogin from './components/CandidateLogin';
 import AdminSignup from './components/AdminSignup'; // Import the AdminSignup component
 import CandidateSignup from './components/CandidateSignup'; // Import the CandidateSignup component
 import Services from './components/Services'; // Import the Services component
-
+import Home from './components/Home';
 import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       <div>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/candidate-login" element={<CandidateLogin />} />
           <Route path="/admin-Signup" element={<AdminSignup />} /> {/* Route to the AdminSignup component */}
