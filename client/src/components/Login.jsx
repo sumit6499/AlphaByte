@@ -1,16 +1,20 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 const Login = () => {
+
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [showCandidateLogin, setShowCandidateLogin] = useState(false);
 
   const handleAdminLoginClick = () => {
     setShowAdminLogin(true);
+    
   };
 
   const handleCandidateLoginClick = () => {
     setShowCandidateLogin(true);
+
   };
 
   if (showAdminLogin) {

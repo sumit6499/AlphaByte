@@ -8,6 +8,31 @@ const CandidateSignup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Added state for passwords matching
+  const [loading,setLoading]=useState(false)
+
+
+  const attemptSignUp=()=>{
+    try {
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:3000/api/v1/auth/candidate/signup',
+        data: {email: email, password: password}
+      };
+      setLoading(true)
+      axios.request(options)
+            .then( (response)=>{
+              console.log(response.data);
+            })
+            .catch(function (error) {
+              console.error(error);
+            });
+    } catch (error) {
+      console.error(error)
+    }
+    finally{
+      setLoading(false)
+    }
+  }
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -36,17 +61,12 @@ const CandidateSignup = () => {
     console.log('Candidate Password:', password);
     console.log('Candidate Confirm Password:', confirmPassword);
 
+
     // Example: Sending signup request using Axios
-    axios.post('/candidate-signup', { email, password, confirmPassword })
-      .then((response) => {
-        console.log(response.data);
-        // Handle successful signup response
-      })
-      .catch((error) => {
-        console.error('Candidate Signup error:', error);
-        // Handle signup error
-      });
+    attemptSignUp()
   };
+
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-200">
@@ -85,7 +105,7 @@ const CandidateSignup = () => {
           </div>
           {!passwordsMatch && <p className="text-red-500">Passwords do not match!</p>} {/* Added error message */}
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
-            Sign Up
+            {loading?"loading":"Sign Up"}
           </button>
         </form>
       </div>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const AdminSignup = () => {
+export default function AdminSignup  ()  {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Added state for passwords matching
+  const [loading,setLoading]=useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -26,6 +27,7 @@ const AdminSignup = () => {
       setPassword('');
       setConfirmPassword('');
       setPasswordsMatch(false);
+
       return; // Exit early without further processing
     }
 
@@ -33,18 +35,35 @@ const AdminSignup = () => {
     console.log('Admin Email:', email);
     console.log('Admin Password:', password);
     console.log('Admin Confirm Password:', confirmPassword);
+    attemptSignUp();
+
+  }
 
     // Example: Sending signup request using Axios
-    axios.post('/admin-signup', { email, password, confirmPassword })
-      .then((response) => {
-        console.log(response.data);
-        // Handle successful signup response
-      })
-      .catch((error) => {
-        console.error('Admin Signup error:', error);
-        // Handle signup error
-      });
-  };
+
+    const attemptSignUp=()=>{
+      try {
+        const options = {
+          method: 'POST',
+          url: 'http://localhost:3000/api/v1/auth/admin/signup',
+          data: {email: email, password: password}
+        };
+        setLoading(true)
+        axios.request(options)
+              .then( (response)=>{
+                console.log(response.data);
+              })
+              .catch(function (error) {
+                console.error(error);
+              });
+      } catch (error) {
+        console.error(error)
+      }
+      finally{
+        setLoading(false)
+      }
+    }
+   
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-200">
@@ -83,12 +102,10 @@ const AdminSignup = () => {
           </div>
           {!passwordsMatch && <p className="text-red-500">Passwords do not match!</p>} {/* Added error message */}
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
-            Sign Up
+            {loading?"Loading..":"Sign Up"}
           </button>
         </form>
       </div>
     </div>
   );
-};
-
-export default AdminSignup;
+}
