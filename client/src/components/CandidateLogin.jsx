@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const CandidateLogin = () => {
+  const [success,setIssuccess] = useState(false);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
 
+  const handlesuccess = () =>{
+    setIssuccess(true)
+  }
+  if(success)
+  {
+    return <Navigate to= "Job-listing"/>;
+  }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -60,8 +69,8 @@ const CandidateLogin = () => {
               className="w-full border-gray-300 rounded-md px-3 py-2"
             />
           </div>
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
-            Candidate Login
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"onClick={handlesuccess}>
+             Login
           </button>
         </form>
         <a href="/forgot-password" className="block mt-4 text-blue-500">Forgot Password?</a>
