@@ -14,7 +14,7 @@ import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage componen
 import JobPostForm from "./components/JobPostForm";
 import Footer from "./components/Footer"; // Import the Footer component
 import About from "./components/About";
-import CompanyPage from ',/components/CompanyPage';
+import CompanyPage from './components/CompanyPage';
 import CandidateList from "./components/CandidateList";
 
 const App = () => {
