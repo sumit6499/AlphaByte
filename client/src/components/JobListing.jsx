@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import { Navigate } from 'react-router-dom';
 const JobListing = () => {
+
   const [jobPostings] = useState([
     {
       id: 1,
@@ -20,12 +21,18 @@ const JobListing = () => {
     },
     // Add more job postings as needed
   ]);
-
+  const [success, setIssuccess] = useState(false);
   const handleApply = (jobId) => {
     // Handle the apply logic here, e.g., send an application request to the server
     console.log(`Applying for job with ID ${jobId}`);
   };
-
+const handlesucces = () =>{
+    setIssuccess(true);
+}
+if(success)
+{
+    return <Navigate  to="/company-page"/>
+}
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 py-30 mt-20">
       <div className="w-full max-w-md">
@@ -37,8 +44,14 @@ const JobListing = () => {
             <p><strong>Experience Required:</strong> {job.experience} years</p>
             <p><strong>Required Skills:</strong> {job.requiredSkills.join(', ')}</p>
             <p>{job.description}</p>
+            {/* <button
+              onClick={() => handleApply(job.id)} 
+              className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 hover:bg-blue-600 transition-colors block mx-auto"
+            >
+              Apply
+            </button> */}
             <button
-              onClick={() => handleApply(job.id)}
+              onClick={handlesucces} 
               className="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 hover:bg-blue-600 transition-colors block mx-auto"
             >
               Apply
