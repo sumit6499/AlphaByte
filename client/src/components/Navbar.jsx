@@ -31,10 +31,10 @@ const NavBar = () => {
 
   const navItems = [
     { link: "Home", path: "home" },
-    { link: "Jobs", path: "jobs" },
+    { link: "Jobs", path: "job-listing" },
     { link: "Resume", path: "resume-uploader" },
+    { link: "Post", path: "job-post" },
     { link: "About", path: "about" },
-    { link: "FAQ", path: "faq" },
   ];
 
   const handleLoginClick = () => {
