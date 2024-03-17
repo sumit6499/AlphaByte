@@ -14,7 +14,7 @@ const CandidateLogin = () => {
   }
   if(success)
   {
-    return <Navigate to= "Job-listing"/>;
+    return <Navigate to= "/job-listing"/>;
   }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

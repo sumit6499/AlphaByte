@@ -15,7 +15,7 @@ const AdminLogin = () => {
   }
   if(Issuccess)
   {
-    return  <Navigate to="Job-listing"/>
+    return  <Navigate to="/candidate-list"/>
   }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

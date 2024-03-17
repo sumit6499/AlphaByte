@@ -15,7 +15,7 @@ export default function AdminSignup  ()  {
     setIssuccess(true)
   }
   if(Issuccess){
-    return <Navigate to="Job-listing" />
+    return <Navigate to="/candidate-list" />
   }
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
