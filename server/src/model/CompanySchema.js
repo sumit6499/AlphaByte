@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const CompanyDetails = mongoose.Schema({
+  _id:{
+    type:Number,
+    required:true,
+  },
   name: {
     type: String,
     trim: true,

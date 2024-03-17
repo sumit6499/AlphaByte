@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { FaXmark, FaBars } from "react-icons/fa6";
 import Login from "./Login";
@@ -31,10 +31,10 @@ const NavBar = () => {
 
   const navItems = [
     { link: "Home", path: "home" },
-    { link: "Service", path: "service" },
+    { link: "Jobs", path: "job-listing" },
+    { link: "Resume", path: "resume-uploader" },
+    { link: "Post", path: "job-post" },
     { link: "About", path: "about" },
-    { link: "Product", path: "product" },
-    { link: "FAQ", path: "faq" },
   ];
 
   const handleLoginClick = () => {
@@ -66,7 +66,9 @@ const NavBar = () => {
               alt="logo"
               className="w-10 inline-block items-center"
             />
-            <span className="text-[#263228]">PlaceMint</span>
+            <span className="text-[#64C29E]">
+              <span className="text-[#407BFF]">Place</span>Mint
+            </span>
           </a>
 
           <ul className="md:flex space-x-12 hidden">

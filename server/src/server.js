@@ -3,7 +3,8 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const Database = require("./config/database");
 const cookieParser = require("cookie-parser");
-const adminRoute = require("./router/Admin");
+const adminRoutes = require("./router/Admin");
+const candidateRoutes = require("./router/Candidate");
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -14,8 +15,10 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
+
 //routes
-app.use("/api/v1/auth/admin", adminRoute);
+app.use("/api/v1/auth/admin", adminRoutes);
+app.use("/api/v1/auth/candidate", candidateRoutes);
 
 //hits
 app.use((req, res, next) => {
