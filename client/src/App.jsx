@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import ResumeUploader from "./components/ResumeUploader"; // Import the ResumeUploader component
 import JobListing from "./components/JobListing";
 import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage component
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -27,7 +28,8 @@ const App = () => {
         {/* Route to the CandidateSignup component */}
         <Route path="/resume-uploader" element={<ResumeUploader />} />{" "}
         {/* Add route for the ResumeUploader component */}
-        <Route path="/Job-listing" element={<JobListing />} />
+        <Route path="/jobs" element={<JobListing />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

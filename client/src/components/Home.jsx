@@ -1,8 +1,7 @@
-import { Carousel } from "flowbite-react";
 import React from "react";
 
 import "../App.css";
-import banner from "../assets/banner.png";
+import Banner from "../assets/banner.png";
 import Services from "./Services";
 
 const Home = () => {
@@ -14,7 +13,7 @@ const Home = () => {
           <div className="w-full mx-auto">
             <div className="top-6 my-28 md:my-8 py-12 flex flex-col md:flex-row-reverse items-center justify-between gap-4">
               <div>
-                <img className="h-auto max-w-xl" src={banner} alt="banner" />
+                <img className="h-auto max-w-xl" src={Banner} alt="banner" />
               </div>
 
               {/* hero text   */}

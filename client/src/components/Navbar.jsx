@@ -66,7 +66,9 @@ const NavBar = () => {
               alt="logo"
               className="w-10 inline-block items-center"
             />
-            <span className="text-[#263228]">PlaceMint</span>
+            <span className="text-[#64C29E]">
+              <span className="text-[#407BFF]">Place</span>Mint
+            </span>
           </a>
 
           <ul className="md:flex space-x-12 hidden">

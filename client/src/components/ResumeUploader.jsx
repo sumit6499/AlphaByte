@@ -51,8 +51,9 @@
 
 // export default ResumeUploader;
 // ResumeUploader.jsx
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+import Fileupl from "../assets/fileupl.png";
 
 const ResumeUploader = () => {
   const [resume, setResume] = useState(null);
@@ -63,26 +64,30 @@ const ResumeUploader = () => {
 
   const handleUpload = () => {
     const formData = new FormData();
-    formData.append('resume', resume);
+    formData.append("resume", resume);
 
     // Example: Sending resume upload request using Axios
-    axios.post('/upload-resume', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then((response) => {
-      console.log('Resume upload successful:', response.data);
-      // Handle successful upload response
-    })
-    .catch((error) => {
-      console.error('Resume upload error:', error);
-      // Handle upload error
-    });
+    axios
+      .post("/upload-resume", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log("Resume upload successful:", response.data);
+        // Handle successful upload response
+      })
+      .catch((error) => {
+        console.error("Resume upload error:", error);
+        // Handle upload error
+      });
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-green-200">
+    <div
+      className={`flex justify-center items-center min-h-screen bg-neutralSilver`}
+    >
+      <img src={Fileupl} alt="" className="w-1/3" />
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Upload Your Resume</h1>
         <input
@@ -91,7 +96,10 @@ const ResumeUploader = () => {
           accept=".pdf"
           className="border-gray-300 rounded-md px-3 py-2 mb-4"
         />
-        <button onClick={handleUpload} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
+        <button
+          onClick={handleUpload}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+        >
           Upload
         </button>
       </div>
