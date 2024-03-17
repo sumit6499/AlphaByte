@@ -47,8 +47,8 @@ Provide a high-level overview of the microservice , including its purpose, key f
     {
         "headers": {},
         "body": {
-            "firstName":"Rushi",
-            "companyName":"Tonape",
+            "firstName":"Rushi Tonape",
+            "companyName":"JP Morgran",
             "email":"rushikeshtonape2002@gmail.com",
             "companyID":"20UCS110",
             "password":"Pass@123"
@@ -104,13 +104,8 @@ Provide a high-level overview of the microservice , including its purpose, key f
             "user": 
             {
                 "_id": "658ed0da083ba7e6b41ae62a",
-                "firstName": "Rushi",
-                "lastName": "Tonape",
-                "email": "rushikeshtonape2002@gmail.com",
-                "studentId": "20UCS110",
-                "additionalDetails": "658ed0da083ba7e6b41ae626",
-                "paymentDonebyUser": "658ed0da083ba7e6b41ae628",
-                "accountType": "Student",
+                "email":"tempAddress53@gmail.com",
+                "password":"Pass@1234",
                 "tokens": [
                 {
                     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM4NTg0NTQsImV4cCI6MTcwMzk0NDg1NH0.-vqLtTApgSIpOcZ_1rPygpHDjUXTsRfHilcIIb4hbU0",
@@ -150,123 +145,21 @@ Provide a high-level overview of the microservice , including its purpose, key f
     "success": true,
     "message": "Student Details Fetched Successfully",
     "data": {
-        "user": {
-            "_id": "658ed0da083ba7e6b41ae62a",
-            "firstName": "Rushi",
-            "lastName": "Tonape",
-            "email": "rushikeshtonape2002@gmail.com",
-            "studentId": "20UCS110",
-            "password": "$2b$10$WDz6X8oaFPNXmd9aG0teEuYsIZ1EH.ttlESnIH0n7u5AiqIslvLHi",
-            "additionalDetails": "658ed0da083ba7e6b41ae626",
-            "paymentDonebyUser": "658ed0da083ba7e6b41ae628",
-            "accountType": "Student",
-            "tokens": [
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM4NTg0NTQsImV4cCI6MTcwMzk0NDg1NH0.-vqLtTApgSIpOcZ_1rPygpHDjUXTsRfHilcIIb4hbU0",
-                    "_id": "658ed116083ba7e6b41ae62d"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5MzQxMjAsImV4cCI6MTcwNDAyMDUyMH0.UEKJwuQ9xXwTUG8HSBJjsG6LhcneuwN5kTYlCQw1NHI",
-                    "_id": "658ff8a83c785b5a2515f9f6"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5MzY2NDEsImV4cCI6MTcwNDAyMzA0MX0.aqtnBrYPkXMYn7OOOQT3oxa-EnYLUjeKwNasYi_JNxs",
-                    "_id": "65900281302c388f5f1710b2"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5MzgzMDQsImV4cCI6MTcwNDAyNDcwNH0.u6vqgfGjYHFz3Fpd_SKli-OSQCV9mrYuN1JDxX58An8",
-                    "_id": "65900900e3803ad0e9b31979"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5MzgzNDgsImV4cCI6MTcwNDAyNDc0OH0.5-HwDaNzdz1fFyYZ773RAwhAmLcxAhjhSB_YPUacQ9U",
-                    "_id": "6590092c39bd778ca6f46617"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5NTA2NTYsImV4cCI6MTcwNDAzNzA1Nn0.5LFseJSds8OMArfghkrfz7D7hwq9ezvyabxmvHONKwY",
-                    "_id": "6590394024a7bd3464a8f90a"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5NTA4MDcsImV4cCI6MTcwNDAzNzIwN30.wKFMa6K_w2E6DiDj2s4rYALE7gsozM6KkIPb_F-vOt0",
-                    "_id": "659039d780cec7d377da6ab4"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5NTEwNTIsImV4cCI6MTcwNDAzNzQ1Mn0.akN8vsDsV337jx_gjw-eRGo-PGOLTNEy_J0H8EDKS-o",
-                    "_id": "65903acc657d743efb78f6fa"
-                },
-                {
-                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJ1c2hpa2VzaHRvbmFwZTIwMDJAZ21haWwuY29tIiwiaWQiOiI2NThlZDBkYTA4M2JhN2U2YjQxYWU2MmEiLCJhY2NvdW50VHlwZSI6IlN0dWRlbnQiLCJpYXQiOjE3MDM5NjAxNDcsImV4cCI6MTcwNDA0NjU0N30.NM5LgE3yAxdptn2BicFB4meJnXrQy4f6HvG5ZglqRWU",
-                    "_id": "65905e53bdad5ced6510b234"
-                }
-            ],
-            "__v": 9
+       {
+    "success": true,
+    "message": "All Resume success fully fetched",
+    "data": [
+        {
+        "_id": 1,
+        "result": "{\"JD Match\":\"65%\",\"MissingKeywords\":[\"Software Development Life Cycle (SDLC)\",\"Data Analysis\",\"Database Management\",\"Machine Learning\",\"Deep Learning\",\"Big Data\"],\"Profile Summary\":\"Shreya Bhandari is a Python Developer with experience in Business Analysis, Event Management, and Graphic Design. Her diverse skill set and enthusiasm for AI/ML make her a potential fit for roles in software development and data science. To enhance her resume for competitive job markets, it is recommended to highlight her technical skills, particularly in data analysis, ML, and database management. Additionally, incorporating industry-specific keywords and quantifying her achievements would strengthen her application.\"}",
+        "__v": 0
         },
-        "studentProfile": {
-            "_id": "658ed0da083ba7e6b41ae626",
-            "year": null,
-            "branch": null,
-            "route": null,
-            "phno": null,
-            "busno": null,
-            "address": null,
-            "bussPass": [
-                {
-                    "busPassId": "DKTE2278",
-                    "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                    "_id": "658ed146083ba7e6b41ae632",
-                    "aaplyDate": "2023-12-29T14:01:42.015Z"
-                },
-                {
-                    "busPassId": "DKTE7413",
-                    "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                    "_id": "658ed164083ba7e6b41ae638",
-                    "aaplyDate": "2023-12-29T14:02:12.351Z"
-                },
-                {
-                    "busPassId": "DKTE5010",
-                    "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                    "_id": "658ed167083ba7e6b41ae63f",
-                    "aaplyDate": "2023-12-29T14:02:15.785Z"
-                },
-                {
-                    "busPassId": "DKTE1780",
-                    "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                    "_id": "659043f74c91c6236365ce97",
-                    "aaplyDate": "2023-12-30T16:23:19.632Z"
-                }
-            ],
-            "__v": 4
-        },
-        "PaymentDetails": {
-            "_id": "658ed0da083ba7e6b41ae628",
-            "paymentDone": [
-                {
-                    "amount": 100,
-                    "studentId": "20UCS110",
-                    "email": "rushikeshtonape2002@gmail.com",
-                    "response": {
-                        "id": "order_NIBf5ik4LiS8FB",
-                        "entity": "order",
-                        "amount": 100,
-                        "amount_paid": 0,
-                        "amount_due": 100,
-                        "currency": "INR",
-                        "receipt": "e8hG6oAum",
-                        "offer_id": null,
-                        "status": "created",
-                        "attempts": 0,
-                        "notes": {
-                            "studentId": "College Bus Pass Payment"
-                        },
-                        "created_at": 1703858584
-                    },
-                    "createdAt": "2023-12-29T14:03:02.500Z",
-                    "_id": "658ed196083ba7e6b41ae64b"
-                }
-            ],
-            "__v": 1
+        {
+        "_id": 2,
+        "result": "{\"JD Match\":\"55%\",\"MissingKeywords\":[\"Data Science\",\"Big Data Engineer\"],\"Profile Summary\":\"Shreya Bhandari is a Python Developer and AI/ML enthusiast. She has a Bachelor of Engineering in Software Engineering and has around 2 years of experience in a variety of roles including Business Analyst, Event Team Ambassador, and Business Owner. She is proficient in Python and Django and has a strong understanding of data science concepts. She is also a skilled graphic designer and has worked on projects for both large and small businesses.\"}",
+        "__v": 0
         }
-    }
-    }
+  ]
     ```
 #### Upload Resume
 
@@ -292,142 +185,7 @@ Provide a high-level overview of the microservice , including its purpose, key f
             "validDate":"12/1/2025"
         }
     }
-    ```
 
-    Response
-
-    ```json
-    {
-        {
-            "success": true,
-            "message": "Bus Pass Applied Successfully",
-            "data": {
-                "_id": "658ed0da083ba7e6b41ae626",
-                "year": null,
-                "branch": null,
-                "route": null,
-                "phno": null,
-                "busno": null,
-                "address": null,
-            "bussPass": [
-            {
-                "busPassId": "DKTE2278",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed146083ba7e6b41ae632",
-                "aaplyDate": "2023-12-29T14:01:42.015Z"
-            },
-            {
-                "busPassId": "DKTE7413",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed164083ba7e6b41ae638",
-                "aaplyDate": "2023-12-29T14:02:12.351Z"
-            },
-            {
-                "busPassId": "DKTE5010",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed167083ba7e6b41ae63f",
-                "aaplyDate": "2023-12-29T14:02:15.785Z"
-            },
-            {
-                "busPassId": "DKTE1780",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "659043f74c91c6236365ce97",
-                "aaplyDate": "2023-12-30T16:23:19.632Z"
-            },
-            {
-                "busPassId": "DKTE7308",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "659061f0bdad5ced6510b315",
-                "aaplyDate": "2023-12-30T18:31:12.982Z"
-            }
-        ],
-        "__v": 5
-    }
-    }
-    }
-    ```
-
-#### Update Student Profile
-
--   **URL**: `http://localhost:3000/api/v1/auth/updateStudentDetails`
--   **Method**: `POST`
--   **Description**: update student profile.
--   **Query Parameters**:
-
-    | Parameter  | Type   | Description                                           |
-    | ---------- | ------ | ----------------------------------------------------- |
-    | `email` | String | The User's Username                                   |
-    | `password` | String | The User's Password (this should be hashed when sent) |
-
--   **Example**:
-
-    Request
-
-    ```json
-    {
-        "headers": {},
-        "body": {
-            "studentId":"20UCS100",
-            "year":"FE",
-            "branch":"Computer Science",
-            "phno":"9876543210",
-            "route":"Ichalkaranji",
-            "address":"ichalkaranji kolhapur"
-        }
-    }
-    ```
-
-    Response
-
-    ```json
-    {
-        {
-            "success": true,
-            "message": "Student Details Updated Successfully",
-            "data": {
-                "_id": "658ed0da083ba7e6b41ae626",
-                "year": "FE",
-                "branch": "Computer Science",
-                "route": "Ichalkaranji",
-                "phno": "9876543210",
-                "address": "ichalkaranji kolhapur",
-            "bussPass": [
-            {
-                "busPassId": "DKTE2278",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed146083ba7e6b41ae632",
-                "aaplyDate": "2023-12-29T14:01:42.015Z"
-            },
-            {
-                "busPassId": "DKTE7413",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed164083ba7e6b41ae638",
-                "aaplyDate": "2023-12-29T14:02:12.351Z"
-            },
-            {
-                "busPassId": "DKTE5010",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "658ed167083ba7e6b41ae63f",
-                "aaplyDate": "2023-12-29T14:02:15.785Z"
-            },
-            {
-                "busPassId": "DKTE1780",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "659043f74c91c6236365ce97",
-                "aaplyDate": "2023-12-30T16:23:19.632Z"
-            },
-            {
-                "busPassId": "DKTE7308",
-                "validDate": "Sun Jan 12 2025 00:00:00 GMT+0530 (India Standard Time)",
-                "_id": "659061f0bdad5ced6510b315",
-                "aaplyDate": "2023-12-30T18:31:12.982Z"
-            }
-        ],
-        "__v": 5
-    }
-    }
-    }
-    ```
 
 
 
@@ -440,31 +198,27 @@ MongoDB is a document database. It stores data in a type of JSON format.
 
 The following tables constitute the database schema: ![Alt text](docs/dbschema.png)
 
-#### Student Table
+#### Admin Table
 
 Stores information about users.
 
 | Column              | Type    | Description                  |
 | ------------------- | ------- | ---------------------------- |
-| `firstName`         | String  | User's first name            |
-| `lastName`          | String  | User's last name             |
-| `email    `         | String  | Unique user email            |
-| `studentId`         | String  | Unique user PRN no           |
-| `password`          | String  | User's password              |
-| `additionalDetails` | VARCHAR | student Profile details      |
-| `paymentDonebyUser` | VARCHAR | Payment History details      |
-| `accountType`       | VARCHAR | Student, Admin               |
+| `email`         | String  | Admin's email           |
+| `password`          | String  | User's password           |
+| `token`         | String  | Admin's Token           |
 
-#### User Sessions Table
+#### CompanyDetails Sessions Table
 
 Stores user sessions and jw tokens.
 
 | Column         | Type     | Description                           |
 | -------------- | -------- | ------------------------------------- |
-| `id`           | INT      | Unique session identifier             |
-| `userid`       | INT      | Foreign Key session owner's id        |
-| `sessiontoken` | VARCHAR  | jwt session token                     |
-| `expiration`   | DATETIME | Expiration date of the user's session |
+| `id`           | INT      | Unique identifier             |
+| `name`       | INT      | Company name    |
+| `Description`       | String     | Company description    |
+| `post` | String  |    Name of new Post |
+| `jobTitle`   | String | New Job Title |
 
 
 
@@ -523,10 +277,10 @@ MAIL_PASS = mijknuknvdrmbgpp
 
 
 #AWS S3
-AWS_BUCKET_NAME = bytesync-app
-AWS_ACCOUNT_REGION = ap-southeast-1
-AWS_ACCOUNT_ACCESS_KEY = AKIA4EYMNT6XYZNDQ6OB
-AWS_ACCOUNT_SECRET_ACCESS_KEY = VWgJHjqo2EBeABJzbduUWestdZW5ZMnKm150OmV/
+AWS_BUCKET_NAME = 'your_bucket_address'
+AWS_ACCOUNT_REGION = 'your_account_region'
+AWS_ACCOUNT_ACCESS_KEY = 'your_access_key'
+AWS_ACCOUNT_SECRET_ACCESS_KEY = 'your_secret_key'
 
 eg.
 
@@ -535,6 +289,8 @@ PORT=3000
 JWT_SECRET="yJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1"
 
 DATABASE = "mongodb+srv://sumitpadalkar53:7XrfOlJtp2C0vMH8@cluster0.lkhdf8m.mongodb.net/?retryWrites=true&w=majority"
+
+
 
 ```
 

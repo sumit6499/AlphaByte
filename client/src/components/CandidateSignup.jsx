@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const CandidateSignup = () => {
@@ -8,8 +9,10 @@ const CandidateSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [fullname ,setFullname]=useState('')
   const [passwordsMatch, setPasswordsMatch] = useState(true); // Added state for passwords matching
   const [loading,setLoading]=useState(false)
+  const navigate=useNavigate()
 
 
   const attemptSignUp=()=>{
@@ -23,6 +26,8 @@ const CandidateSignup = () => {
       axios.request(options)
             .then( (response)=>{
               console.log(response.data);
+              toast.success("signup success")
+              navigate('job-listing')
             })
             .catch(function (error) {
               console.error(error);
@@ -32,6 +37,7 @@ const CandidateSignup = () => {
     }
     finally{
       setLoading(false)
+      
     }
   }
 
@@ -44,6 +50,10 @@ const CandidateSignup = () => {
 
   if (Issuccess) {
     return <Navigate to="/resume-uploader" />;
+  }
+
+  const handleFullnameChange=(e)=>{
+    setFullname(e.target.value)
   }
   
   const handlePasswordChange = (e) => {
@@ -77,6 +87,7 @@ const CandidateSignup = () => {
   
 
   return (
+    <ToastContainer>
     <div className="flex justify-center items-center min-h-screen bg-green-200">
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Candidate Sign Up</h1>
@@ -88,6 +99,16 @@ const CandidateSignup = () => {
               id="email"
               value={email}
               onChange={handleEmailChange}
+              className="w-full border-gray-300 rounded-md px-3 py-2"
+            />
+          </div>
+          <div>
+            <label htmlFor="Fullname" className="block">Fullname:</label>
+            <input
+              type="fullname"
+              id="fullname"
+              value={fullname}
+              onChange={handleFullnameChange}
               className="w-full border-gray-300 rounded-md px-3 py-2"
             />
           </div>
@@ -118,6 +139,7 @@ const CandidateSignup = () => {
         </form>
       </div>
     </div>
+    </ToastContainer>
   );
 };
 

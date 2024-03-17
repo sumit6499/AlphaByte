@@ -1,13 +1,42 @@
 import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {ToastContainer,toast} from 'react-toastify'
 
 const CandidateLogin = () => {
   const [success,setIssuccess] = useState(false);
+  const navigate=useNavigate()
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
+  const [loading,setLoading]=useState(false)
+
+  const attemptSignUp=()=>{
+    try {
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:3000/api/v1/auth/candidate/login',
+        data: {email: email, password: password}
+      };
+      setLoading(true)
+      axios.request(options)
+            .then( (response)=>{
+              console.log(response.data);
+            })
+            .catch(function (error) {
+              console.error(error);
+            });
+    } catch (error) {
+      toast.error(error)
+    }
+    finally{
+      setLoading(false)
+      toast.success("Login Successful")
+      navigate('"/job-listing"')
+    }
+  }
+
 
   const handlesuccess = () =>{
     setIssuccess(true)
@@ -31,20 +60,12 @@ const CandidateLogin = () => {
     console.log('Candidate Password:', password);
 
     // Example: Sending candidate login request using Axios
-    axios.post('/candidate-login', { email, password })
-      .then((response) => {
-        console.log(response.data);
-        // Handle successful candidate login response
-        // Redirect to candidate dashboard or desired page
-        history.push('/candidate-dashboard');
-      })
-      .catch((error) => {
-        console.error('Candidate Login error:', error);
-        // Handle candidate login error
-      });
+    attemptSignUp()
+    Navigate('/job-listing"')
   };
 
   return (
+    <ToastContainer>
     <div className="flex justify-center items-center min-h-screen bg-green-200">
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Candidate Login</h1>
@@ -76,6 +97,7 @@ const CandidateLogin = () => {
         <a href="/forgot-password" className="block mt-4 text-blue-500">Forgot Password?</a>
       </div>
     </div>
+    </ToastContainer>
   );
 };
 

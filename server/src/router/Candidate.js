@@ -16,7 +16,7 @@ const FormData = require("form-data");
 const fs = require("fs");
 let data = new FormData();
 
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+const { S3Client, PutObjectCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
 const bucketName = process.env.BUCKET_NAME;
 const region = process.env.BUCKET_REGION;
 const accesskey = process.env.AWS_ACCESS_KEY;
@@ -32,6 +32,9 @@ const s3 = new S3Client({
 
 router.get("/login", login);
 
+
+//NLP process 
+
 app.use(express.urlencoded({ extended: true }));
 router.post("/upload", upload.single("resume"), async (req, res) => {
   try {
@@ -46,6 +49,11 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
       ContentType: req.file.mimetype,
     });
 
+
+    const getCommand=new GetObjectCommand({
+        Bucket: bucketName,
+        Key: req.file.originalname,
+    })
     console.log(req.file.path);
 
     const __dirname = ".";
@@ -55,6 +63,7 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
       fs.createReadStream(path.join(__dirname, `${req.file.path}`))
     );
 
+    //flask backend of NLP process
     let config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -64,9 +73,9 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
       },
       data: data,
     };
-    // await s3.send(command);
+    await s3.send(command);
 
-    const url = await getSignedUrl(s3, command);
+    const url = await getSignedUrl(s3, getCommand);
     console.log(url);
 
     axios
