@@ -61,25 +61,28 @@ const ResumeUploader = () => {
     setResume(e.target.files[0]);
   };
 
-  const handleUpload = () => {
-    const formData = new FormData();
-    formData.append('resume', resume);
+  const handleUpload=()=>{
 
-    // Example: Sending resume upload request using Axios
-    axios.post('/upload-resume', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
+    const id=1
+
+    if(!resume){
+      alert('Please select file');
+      return;
+    }
+    const formdata = new FormData();
+    formdata.append("resume", resume);
+
+    axios.post(`http://localhost:3000/api/v1/auth/candidate/upload`,formdata,{
+      onUploadProgress:(progressEvent)=>{console.log(progressEvent.progress*100)},
+      headers:{
+        'Content-Type': 'multipart/form-data',
       }
     })
-    .then((response) => {
-      console.log('Resume upload successful:', response.data);
-      // Handle successful upload response
-    })
-    .catch((error) => {
-      console.error('Resume upload error:', error);
-      // Handle upload error
-    });
-  };
+    .then((res)=>console.log(res.data))
+    .catch((err)=>console.error(err))
+
+  }
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-200">
