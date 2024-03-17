@@ -57,15 +57,14 @@ import Fileupl from "../assets/fileupl.png";
 
 const ResumeUploader = () => {
   const [resume, setResume] = useState(null);
+  const [id,setID]=useState(1);
 
   const handleResumeChange = (e) => {
     setResume(e.target.files[0]);
   };
 
-<<<<<<< HEAD
   const handleUpload=()=>{
 
-    const id=1
 
     if(!resume){
       alert('Please select file');
@@ -85,28 +84,6 @@ const ResumeUploader = () => {
 
   }
   
-=======
-  const handleUpload = () => {
-    const formData = new FormData();
-    formData.append("resume", resume);
-
-    // Example: Sending resume upload request using Axios
-    axios
-      .post("/upload-resume", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        console.log("Resume upload successful:", response.data);
-        // Handle successful upload response
-      })
-      .catch((error) => {
-        console.error("Resume upload error:", error);
-        // Handle upload error
-      });
-  };
->>>>>>> d9b485e86fb87995c717b6fcb840b2032c3f6e9e
 
   return (
     <div

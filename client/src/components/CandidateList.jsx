@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
 const CandidateList = ({ candidates }) => {
+
+
+
+  useEffect(()=>{
+   
+
+  const options = {method: 'GET', url: 'http://localhost:3000/api/v1/auth/admin/getResume'};
+
+  axios.request(options).then( function(response) {
+        console.log(response.data.data)
+    }).catch(function (error) {
+      console.error(error);
+    });
+  })
+
+
   // Dummy candidate data
   const dummyCandidates = [
     { id: 1, name: 'John Doe' },
@@ -24,15 +41,16 @@ const CandidateList = ({ candidates }) => {
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Candidate Name
             </th>
-            <th scope="col" className="relative px-6 py-3">
-              <span className="sr-only">View Resume</span>
+            <th scope="col" className="relative px-6 py-3 ">
+              <span className="sr-only text-gray-500 uppercase">View Resume</span>
             </th>
-            <th scope="col" className="relative px-6 py-3">
-              <span className="sr-only">Send Feedback</span>
+            <th scope="col" className="relative px-6 py-3 text-gray-500 uppercase tracking-wider">
+              <span className="sr-only text-gray-500 ">Resume Score</span>
             </th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
+          {/* {data.data} */}
           {candidateData.map((candidate, index) => (
             <tr key={candidate.id}>
               <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>

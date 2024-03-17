@@ -9,6 +9,8 @@ const axios = require("axios");
 const path = require("path");
 const resultModel = require("../model/Result");
 
+const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
+
 const FormData = require("form-data");
 
 const fs = require("fs");
@@ -33,7 +35,7 @@ router.get("/login", login);
 app.use(express.urlencoded({ extended: true }));
 router.post("/upload", upload.single("resume"), async (req, res) => {
   try {
-    const id = 1;
+    const id = 2;
     const { jd } = req.query;
 
     var result;
@@ -64,6 +66,9 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
     };
     // await s3.send(command);
 
+    const url = await getSignedUrl(s3, command);
+    console.log(url);
+
     axios
       .request(config)
       .then((response) => {
@@ -74,6 +79,7 @@ router.post("/upload", upload.single("resume"), async (req, res) => {
       .then(async () => {
         const user = await resultModel.create({
           _id: id,
+          pdfName: req.file.originalname,
           result: result,
         });
         console.log("data saved");

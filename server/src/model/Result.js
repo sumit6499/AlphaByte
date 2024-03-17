@@ -5,6 +5,9 @@ const resultSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  pdfName:{
+    type:String
+  },
   result: {
     type: String,
   },
