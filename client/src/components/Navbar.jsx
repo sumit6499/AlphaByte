@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { FaXmark, FaBars } from "react-icons/fa6";
 import Login from "./Login";
@@ -31,9 +31,9 @@ const NavBar = () => {
 
   const navItems = [
     { link: "Home", path: "home" },
-    { link: "Service", path: "service" },
+    { link: "Jobs", path: "jobs" },
+    { link: "Resume", path: "resume-uploader" },
     { link: "About", path: "about" },
-    { link: "Product", path: "product" },
     { link: "FAQ", path: "faq" },
   ];
 
