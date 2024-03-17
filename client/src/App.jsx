@@ -14,6 +14,8 @@ import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage componen
 import JobPostForm from "./components/JobPostForm";
 import Footer from "./components/Footer"; // Import the Footer component
 import About from "./components/About";
+import CompanyPage from ',/components/CompanyPage';
+import CandidateList from "./components/CandidateList";
 
 const App = () => {
   return (
@@ -36,6 +38,8 @@ const App = () => {
           <Route path="/job-listing" element={<JobListing />} />
           <Route path="/job-post" element={<JobPostForm />} />
           <Route path="/about" element={<About />} />
+          <Route path="/company-page" element={<CompanyPage />} />
+           <Route path="/candidate-list" element={<CandidateList />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
