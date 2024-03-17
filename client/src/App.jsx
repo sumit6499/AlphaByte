@@ -6,7 +6,7 @@ import AdminLogin from './components/AdminLogin';
 import CandidateLogin from './components/CandidateLogin';
 import AdminSignup from './components/AdminSignup'; // Import the AdminSignup component
 import CandidateSignup from './components/CandidateSignup'; // Import the CandidateSignup component
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 import Home from  './components/Home';
 import ResumeUploader from './components/ResumeUploader'; // Import the ResumeUploader component
 import JobListing from './components/JobListing';
@@ -17,7 +17,7 @@ import About from "./components/About";
 
 const App = () => {
   return (
-    <BrowserRouter>
+ 
       <div style={{ position: 'relative', minHeight: '100vh' }}>
         <div style={{ paddingBottom: '150px' }}> {/* Ensure space for footer */}
           <Navbar />
@@ -37,7 +37,7 @@ const App = () => {
         </div>
         <Footer style={{ marginTop: '50px' }} /> {/* Footer component with margin top */}
       </div>
-    </BrowserRouter>
+   
   );
 }
 
