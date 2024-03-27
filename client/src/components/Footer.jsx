@@ -57,7 +57,7 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Terms & conditions</h2>
             {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam dui vel quam laoreet.</p> */}
             <a href="#">Privacy Policy</a>
-            <a href="#">Conditions</a>
+{/*             <a href="#">Conditions</a> */}
           </div>
         </div>
       </div>
